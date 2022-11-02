@@ -1,5 +1,8 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
+const inquirer = require('inquirer');
+
+const generateMD = require('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -61,7 +64,7 @@ const questions = [
     {
         type:`input`,
         name:`contribution`,
-        message:`😀 Please Enter contribution guidelines of the project`,
+        message:`😀 Please Enter contribution guidelines of the project:`,
         validate: value => {
             if (value) {
                 return true;
@@ -75,12 +78,55 @@ const questions = [
     {
         type:`input`,
         name:`test`,
-        message:`😀 Please Enter test instructions of the project`,
+        message:`😀 Please Enter test instructions of the project:`,
         validate: value => {
             if (value) {
                 return true;
             } else {
                 console.log('(Request information😳) Please enter test instructions for your project');
+                return false;
+            }
+        }
+    },
+
+    {
+        type:`rawlist`,
+        name:`license`,
+        message:`😀 Please choose a license for the project:`,
+        choices:['MIT',`GPLv3`,'Apache_2.0','None'],
+        validate: value => {
+            if (value) {
+                return true;
+            } else {
+                console.log('(Request information😳) Please choose a license for your project');
+                return false;
+            }
+        }
+    },
+
+    {
+        type:`input`,
+        name:`userName`,
+        message:`😀 Please enter your github username:`,
+        validate: value => {
+            if (value) {
+                return true;
+            } else {
+                console.log('(Request information😳) Please enter your github username');
+                return false;
+            }
+        }
+    },
+
+    {
+        type:`input`,
+        name:`email`,
+        message:`😀 Please enter your email address:`,
+        validate: value => {
+            if (value) {
+                return true;
+            } else {
+                console.log('(Request information😳) Please enter your email address');
                 return false;
             }
         }
@@ -99,7 +145,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then(function (userInput) {
-        writeToFile("README.md", generateMarkdown(userInput))
+        writeToFile("README.md", generateMD(userInput))
     })
     .catch((err)=> console.log(err))
 };
