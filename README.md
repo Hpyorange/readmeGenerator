@@ -2,7 +2,7 @@
   ![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 
   ## Description
-   This application is a professional README Generator.User can create a Readme file by answers some question in their command line use node js.
+  This application is a professional README Generator. Users can create a Readme file by answering questions in their command line using node js.
 
   ## Table of Contents
   * [Installation](#installation)
@@ -13,10 +13,10 @@
   * [Questions](#questions)
 
   ## Installation 
-  User can clone or download the repository and install Node. Then use command 'npm i' to install inquirer
+  Users can clone or download the repository. Then install Node, and use the command 'npm i' to install inquirer
 
   ## Usage 
-  Use command 'node index.js' Then answer all the questions.
+  Use the command 'node index.js' to start the app. Then answer all the questions.
 
   ## License 
   [MIT](https://choosealicense.com/licenses/mit/)

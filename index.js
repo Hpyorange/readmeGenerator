@@ -136,7 +136,7 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
-    err ? console.error(err) : console.log('Success! The information is converted to ReadMe')
+    err ? console.error(err) : console.log('Success! The information is converted to README')
 );
 
 }
@@ -145,7 +145,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then(function (userInput) {
-        writeToFile("README.md", generateMD(userInput))
+        writeToFile("READMEDemo.md", generateMD(userInput))
     })
     .catch((err)=> console.log(err))
 };
