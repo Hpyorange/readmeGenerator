@@ -17,7 +17,7 @@
 
   ## Usage 
   Use the command 'node index.js' to start the app. Then answer all the questions.
-
+  ![Demo-Gif](demo\readme-demo.gif "Demo-Gif")
   ## License 
   [MIT](https://choosealicense.com/licenses/mit/)
 
